@@ -24,3 +24,4 @@ print(df)
 df['col_new'] = 'A' + df['col'].astype(str)
 df 
 # %%
+print([i.lower() for i in "TURING"])
