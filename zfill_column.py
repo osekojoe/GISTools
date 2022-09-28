@@ -22,6 +22,4 @@ print(df)
 #%%
 '''add A back to the df col after padding with zeroes'''
 df['col_new'] = 'A' + df['col'].astype(str)
-df 
-# %%
-print([i.lower() for i in "TURING"])
+df
