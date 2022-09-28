@@ -6,7 +6,7 @@ def add_part(part_name, vendor_list):
 	#insert new row into the parts table
 	insert_part = "INSERT INTO parts(part_name) VALUES(%s) RETURNING part_id;"
 	#insert new row into the vendor_parts table
-	assign_vendor = "INSERT INTO vendor_parts(vendor_id, part_id) VALUES(%s, %s"
+	assign_vendor = "INSERT INTO vendor_parts(vendor_id, part_id) VALUES(%s, %s)"
 
 	conn = None
 	try:
@@ -14,7 +14,7 @@ def add_part(part_name, vendor_list):
 		conn = psycopg2.connect(**params)
 		cur = conn.cursor()
 		#insert a new part
-		cur.execute(insert_part, (part_name))
+		cur.execute(insert_part, (part_name,))
 		#get the part id
 		part_id = cur.fetchone()[0]
 		#assign parts provided by vendors
