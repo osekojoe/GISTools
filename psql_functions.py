@@ -27,5 +27,6 @@ def get_parts(vendor_id):
 		if conn is not None:
 			conn.close()
 	
-	if __name__ == '__main__':
+	
+if __name__ == '__main__':
 		get_parts(1)
